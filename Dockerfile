@@ -15,9 +15,6 @@ COPY .Rprofile .Rprofile
 COPY renv/activate.R renv/activate.R
 COPY renv/settings.json renv/settings.json
 
-# Solving problems with cache
-ENV HOME=/code
-RUN mkdir -p /code/.cache/R
 
 # restore
 RUN R -e "renv::restore()"
